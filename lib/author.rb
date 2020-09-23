@@ -19,14 +19,13 @@ class Author
   end
   
   def add_post_by_name(name)
-    song = Song.new(name)
-    @songs << song
-    song.artist = self
-    @@song_count += 1
+    post = Post.new(name)
+    @posts << post
+    post.artist = self
+    @@post_count += 1
   end
   
-  def song_count
-    result = Song.all.select {|song| song.artist == self}
-    result.length
+  def post_count
+    @@post_count
   end
 end
